@@ -6,27 +6,27 @@ import time
 #--------------Simulate Move with mouse-----------------
 def go_left():
     #swipe left
-    mouse.drag(0, 0, -400, 0, absolute=False, duration= 0.2)
+    mouse.drag(0, 0, -200, 0, absolute=False, duration= 0.2)
     #replace mouse on the center
-    mouse.move(400, 0, absolute=False, duration=0.2)
+    mouse.move(200, 0, absolute=False, duration=0.2)
 
 def go_right():
     #swipe right
-    mouse.drag(0, 0 , 400, 0 , absolute=False, duration=0.2)
+    mouse.drag(0, 0 , 200, 0 , absolute=False, duration=0.2)
     #replace mouse on the center
-    mouse.move(400,0, absolute=False, duration = 0.2)
+    mouse.move(200,0, absolute=False, duration = 0.2)
 
 def go_top():
     #swipe top
-    mouse.drag(0, 0, 0, -400, absolute=False, duration=0.2)
+    mouse.drag(0, 0, 0, -200, absolute=False, duration=0.2)
     #replace mouse on the center
-    mouse.move(0,400, absolute=False, duration = 0.2)
+    mouse.move(0,200, absolute=False, duration = 0.2)
 
 def go_bottom():
     #swipe bottom
-    mouse.drag(0, 0, 0, 400, absolute=False, duration=0.2)
+    mouse.drag(0, 0, 0, 200, absolute=False, duration=0.2)
     #replace mouse on the center
-    mouse.move(0,400, absolute=False, duration = 0.2)
+    mouse.move(0,200, absolute=False, duration = 0.2)
 
 
 #-----------------Simulate Move with keyboard-----------------

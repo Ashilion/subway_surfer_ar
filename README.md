@@ -7,6 +7,6 @@ Subway Surfer but the human move
 * Les fichiers python
 
 ## Comment jouer ?
-* lancer humanPose.py avec les droits d'administrateur pour la caméra
-* et ensuite faut appuyer sur la touche "d"(en etant focus sur le retour camera) pour lancer le tracking et la si tu bouges tu verras des trucs dans le terminal et ca appuie sur les flèches de direction automatiquement
+* lancer speed_version.py avec les droits d'administrateur pour la caméra
+*  si tu bouges tu verras des trucs dans le terminal et ca appuie sur les flèches de direction automatiquement
 * (ensuite faut juste se mettre sur le jeu)

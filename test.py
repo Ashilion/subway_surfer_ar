@@ -55,14 +55,16 @@ while cap.isOpened():
         position_hauteur = "normal"
         position = "normal"
         if position_epaules_initiales!=None and results.pose_landmarks!=None : 
-            actual_position_epaules = (results.pose_landmarks.landmark[12], results.pose_landmarks.landmark[11])    
+            actual_position_epaules = (results.pose_landmarks.landmark[0], results.pose_landmarks.landmark[0])
+            lhand_pos = results.pose_landmarks.landmark[15]
+            rhand_pos = results.pose_landmarks.landmark[14]
             if position_epaules_initiales[0].x < actual_position_epaules[0].x - 0.1:
                 position = "gauche"
             if position_epaules_initiales[0].x > actual_position_epaules[0].x + 0.1:
                 position = "droite"
-            if position_epaules_initiales[0].y < actual_position_epaules[0].y - 0.07:
+            if position_epaules_initiales[0].y < actual_position_epaules[0].y - 0.05 and lhand_pos_initial.y < lhand_pos.y - 0.1 and rhand_pos_initial.y < rhand_pos.y - 0.1 :
                 position_hauteur = "bas"
-            if position_epaules_initiales[0].y > actual_position_epaules[0].y + 0.05:
+            if position_epaules_initiales[0].y > actual_position_epaules[0].y + 0.03 and lhand_pos_initial.y < lhand_pos.y + 0.1 and rhand_pos_initial.y < rhand_pos.y + 0.1 :
                 position_hauteur = "haut"
 
             if position != previous_position:
@@ -98,7 +100,9 @@ while cap.isOpened():
             break
         if key == ord('d'):
             print("d pressed")
-            position_epaules_initiales = (results.pose_landmarks.landmark[12], results.pose_landmarks.landmark[11])
+            position_epaules_initiales = (results.pose_landmarks.landmark[0], results.pose_landmarks.landmark[0])
+            lhand_pos_initial = results.pose_landmarks.landmark[15]
+            rhand_pos_initial = results.pose_landmarks.landmark[14]
             print( position_epaules_initiales[0].x, 0, position_epaules_initiales[0].x, int(height))
             cv2.line(frame, (10, 0), (10, int(height)), (0, 255, 0), 2)
     except Exception as e:

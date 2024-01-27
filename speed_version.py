@@ -46,7 +46,7 @@ already_swiped_bot = False
 test_finished = False
 #param speed
 speed_cap = 0.07
-speed_cap_hauteur = 0.07
+speed_cap_hauteur = 0.07    
 
 while cap.isOpened():
     # read frame from capture object
