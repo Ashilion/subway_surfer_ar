@@ -48,6 +48,9 @@ test_finished = False
 speed_cap = 0.07
 speed_cap_hauteur = 0.07    
 
+max_boucle = 15 # 15 frames = 0.5s
+boucle = 0
+
 while cap.isOpened():
     # read frame from capture object
     ret , frame = cap.read()
@@ -111,10 +114,12 @@ while cap.isOpened():
                 print("swipe down", already_swiped_top, already_swiped_bot)
                 mc.go_bot_arrow()
                 already_swiped_bot = True
+                boucle=0 
             if speed_hauteur < -speed_cap_hauteur and already_swiped_bot == False and already_swiped_top== False:
                 print("swipe up", already_swiped_top, already_swiped_bot)
                 mc.go_top_arrow()
                 already_swiped_top = True
+                boucle=0
             if speed_hauteur < -speed_cap_hauteur and already_swiped_bot == True:
                 test_finished = True
                 print(already_swiped_top, already_swiped_bot)
@@ -126,6 +131,12 @@ while cap.isOpened():
                 already_swiped_bot = False
                 already_swiped_top = False
                 test_finished = False
+            if boucle > max_boucle and (already_swiped_bot == True or already_swiped_top == True):
+                print('time reset')
+                already_swiped_bot = False
+                already_swiped_top = False
+                test_finished = False
+            boucle+=1
             
             
         # show the final output
