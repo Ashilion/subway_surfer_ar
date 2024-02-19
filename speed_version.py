@@ -48,7 +48,7 @@ test_finished = False
 speed_cap = 0.07
 speed_cap_hauteur = 0.07    
 
-max_boucle = 15 # 15 frames = 0.5s
+max_boucle = 30 # 15 frames = 0.5s
 boucle = 0
 
 while cap.isOpened():
